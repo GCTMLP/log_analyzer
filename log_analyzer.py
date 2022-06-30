@@ -60,7 +60,7 @@ def main(config, config_file):
             return
 
         logging.info('parsing log....')
-        path_and_filename = config['LOG_DIR']+'/'+file_params['name'] 
+        path_and_filename = config['LOG_DIR']+'/'+file_params['name']
         data, count, time = parse(read_file(path_and_filename, file_params['format']))
 
         logging.info('rendering data....')
@@ -93,16 +93,19 @@ def read_config(config, config_file, logging):
         if config_parse.has_section('log_analyzer'):
             try:
                 config['REPORT_SIZE'] = config_parse['log_analyzer']['REPORT_SIZE']
+                logging.info('read "REPORT_SIZE" from file')
             except KeyError:
-                pass
+                logging.info('read "REPORT_SIZE" from config in script')
             try:
                 config['REPORT_DIR'] = config_parse['log_analyzer']['REPORT_DIR']
+                logging.info('read "REPORT_DIR" from file')
             except KeyError:
-                pass
+                logging.info('read "REPORT_DIR" from config in script')
             try:
                 config['LOG_DIR'] = config_parse['log_analyzer']['LOG_DIR']
+                logging.info('read "LOG_DIR" from file')
             except KeyError:
-                pass
+                logging.info('read "LOG_DIR" from config in script')
         else:
             logging.error('config file not parsed')
             return False
