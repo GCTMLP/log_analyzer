@@ -60,7 +60,7 @@ def main(config, config_file):
             return
 
         logging.info('parsing log....')
-        path_and_filename = config['LOG_DIR']+'/'+file_params['name']
+        path_and_filename = config['LOG_DIR']+'/'+file_params['name'] 
         data, count, time = parse(read_file(path_and_filename, file_params['format']))
 
         logging.info('rendering data....')
