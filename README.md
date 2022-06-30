@@ -3,7 +3,7 @@
 2) В скрипте test.py находятся функциональные тесты для log_analyzer.py
 
 3) Скрипт log_analyzer.py можно запустить с параметром --config 
-```python3 log_analyzer.py --config "Путь до файла"
+```python3 log_analyzer.py --config "Путь до файла"```
 
 4)Логи бывают заархивированные и plain  
 
